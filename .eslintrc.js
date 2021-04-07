@@ -10,8 +10,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'airbnb-typescript',
-        'prettier',
-        'prettier/@typescript-eslint',
+        'prettier'
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -52,6 +51,7 @@ module.exports = {
         'react/prop-types': [0],
         'react/jsx-boolean-value': [2, 'always'],
         'import/prefer-default-export': 'off',
+        'arrow-body-style': [0], // Oliver likes this
         // TODO: remove
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
