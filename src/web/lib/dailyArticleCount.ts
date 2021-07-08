@@ -3,7 +3,7 @@ export interface DailyArticle {
 	count: number;
 }
 
-export type DailyArticleCount = Array<DailyArticle>;
+export type DailyArticleCount = DailyArticle[];
 
 // in localStorage, has format {"value":[{"day":18459,"count":1},{"day":18457,"count":1},{"day":18446,"count":1}]} to match frontend
 interface DailyArticleCountLocalStorage {

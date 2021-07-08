@@ -32,7 +32,7 @@ export const YoutubeBlockComponent: React.FC<{
 }> = ({ element, pillar, adTargeting }) => {
 	// https://www.ampproject.org/docs/reference/components/amp-youtube
 	// https://developers.google.com/youtube/player_parameters
-	const attributes: { [key: string]: any } = {
+	const attributes: Record<string, any> = {
 		id: `gu-video-youtube-${element.id}`,
 		'data-videoid': element.assetId,
 		layout: 'responsive',

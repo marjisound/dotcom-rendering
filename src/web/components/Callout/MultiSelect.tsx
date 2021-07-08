@@ -4,7 +4,7 @@ import { CheckboxSelect } from './CheckboxSelect';
 type Props = {
 	formField: CampaignFieldCheckbox | CampaignFieldRadio;
 	formData: { [key in string]: any };
-	setFormData: React.Dispatch<React.SetStateAction<{ [x: string]: any }>>;
+	setFormData: React.Dispatch<React.SetStateAction<Record<string, any>>>;
 	multiple: boolean;
 };
 

@@ -6,9 +6,7 @@ const FORCE_BRAZE_ALLOWLIST = [
 ];
 
 type Meta = {
-	dataFromBraze: {
-		[key: string]: string;
-	};
+	dataFromBraze: Record<string, string>;
 	logImpressionWithBraze: () => void;
 	logButtonClickWithBraze: (id: number) => void;
 };

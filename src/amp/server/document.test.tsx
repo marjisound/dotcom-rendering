@@ -2,7 +2,7 @@ import validator from 'amphtml-validator';
 import { Article as CAPI } from '@root/fixtures/generated/articles/Article';
 import { Article } from '@root/src/amp/pages/Article';
 import { extractNAV } from '@root/src/model/extract-nav';
-import { AnalyticsModel } from '@root/src/amp/components/Analytics';
+import type { AnalyticsModel } from '@root/src/amp/components/Analytics';
 import { document } from './document';
 
 test('rejects invalid AMP doc (to test validator)', async () => {

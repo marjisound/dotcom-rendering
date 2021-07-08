@@ -10,7 +10,7 @@ const textInputStyles = css`
 type Props = {
 	formField: CampaignFieldText;
 	formData: { [key in string]: any };
-	setFormData: React.Dispatch<React.SetStateAction<{ [x: string]: any }>>;
+	setFormData: React.Dispatch<React.SetStateAction<Record<string, any>>>;
 };
 
 export const TextInput = ({ formField, formData, setFormData }: Props) => (

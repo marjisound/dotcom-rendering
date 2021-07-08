@@ -1,7 +1,5 @@
-import {
-	getIdApiUserData,
-	IdApiUserData,
-} from '@root/src/web/lib/getIdapiUserData';
+import type { IdApiUserData } from '@root/src/web/lib/getIdapiUserData';
+import { getIdApiUserData } from '@root/src/web/lib/getIdapiUserData';
 
 export const getBrazeUuid = async (ajaxUrl: string): Promise<string | void> => {
 	return getIdApiUserData(ajaxUrl)

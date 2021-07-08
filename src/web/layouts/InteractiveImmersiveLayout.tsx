@@ -8,7 +8,8 @@ import {
 	brandLine,
 	neutral,
 } from '@guardian/src-foundations/palette';
-import { Display, Format, Special } from '@guardian/types';
+import type { Format } from '@guardian/types';
+import { Display, Special } from '@guardian/types';
 import { Lines } from '@guardian/src-ed-lines';
 
 import { Footer } from '@root/src/web/components/Footer';

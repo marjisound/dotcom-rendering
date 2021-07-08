@@ -1,4 +1,4 @@
-type Props = { [key: string]: any };
+type Props = Record<string, any>;
 
 export const HeadlinesContainer: React.FC<Props> = ({}: Props) => {
 	// need funky layout

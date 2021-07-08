@@ -15,7 +15,7 @@ jest.mock('./hasRequiredConsents', () => ({
 }));
 
 describe('checkBrazeDependecies', () => {
-	let windowSpy: jest.SpyInstance<any>;
+	let windowSpy: jest.SpyInstance;
 
 	beforeEach(() => {
 		windowSpy = jest.spyOn(window, 'window', 'get');
@@ -32,7 +32,7 @@ describe('checkBrazeDependecies', () => {
 		return flushPromises;
 	});
 
-	const setWindow = (windowData: { [key: string]: any }) =>
+	const setWindow = (windowData: Record<string, any>) =>
 		windowSpy.mockImplementation(() => windowData);
 
 	it('succeeds if all dependencies are fulfilled', async () => {

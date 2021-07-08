@@ -4,7 +4,7 @@ import { useApi as useApi_ } from '@root/src/web/lib/useApi';
 import { ShareCount } from './ShareCount';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const useApi: { [key: string]: any } = useApi_;
+const useApi: Record<string, any> = useApi_;
 
 jest.mock('../lib/useApi', () => ({
 	useApi: jest.fn(),

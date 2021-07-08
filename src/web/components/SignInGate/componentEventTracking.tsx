@@ -1,8 +1,8 @@
-import {
+import type {
 	OphanComponent,
 	OphanComponentEvent,
 } from '@root/src/web/browser/ophan/ophan';
-import { CurrentSignInGateABTest } from 'src/web/components/SignInGate/types';
+import type { CurrentSignInGateABTest } from 'src/web/components/SignInGate/types';
 
 type ABTestVariant = {
 	name: string;
@@ -26,7 +26,7 @@ type ComponentEventWithoutAction = {
 	abTest?: ABTestVariant;
 };
 
-const ophan = window?.guardian?.ophan;
+const { ophan } = window.guardian;
 
 // ophan helper methods
 export const submitComponentEventTracking = (

@@ -54,7 +54,8 @@ import {
 	PersonalityQuizAtom,
 	KnowledgeQuizAtom,
 } from '@guardian/atoms-rendering';
-import { Design, Format } from '@guardian/types';
+import type { Format } from '@guardian/types';
+import { Design } from '@guardian/types';
 import { Figure } from '../components/Figure';
 
 type Props = {

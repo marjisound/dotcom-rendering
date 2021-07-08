@@ -9,7 +9,7 @@ import type {
 	TestMeta,
 } from '@guardian/types';
 
-export type OphanRecordFunction = (event: { [key: string]: any }) => void;
+export type OphanRecordFunction = (event: Record<string, any>) => void;
 
 export const getOphanRecordFunction = (): OphanRecordFunction => {
 	const record =
@@ -80,10 +80,10 @@ export const sendOphanComponentEvent = (
 	submitComponentEvent(componentEvent, ophanRecord);
 };
 
-export const abTestPayload = (tests: {
-	[key: string]: string;
-}): OphanABPayload => {
-	const records: { [key: string]: OphanABEvent } = {};
+export const abTestPayload = (
+	tests: Record<string, string>,
+): OphanABPayload => {
+	const records: Record<string, OphanABEvent> = {};
 	Object.keys(tests).forEach((testName) => {
 		records[`ab${testName}`] = {
 			variantName: tests[testName],

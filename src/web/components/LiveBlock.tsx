@@ -197,7 +197,7 @@ const FirstPublished = ({
 	);
 };
 
-const typesWeStretch: CAPIElement['_type'][] = [
+const typesWeStretch: Array<CAPIElement['_type']> = [
 	'model.dotcomrendering.pageElements.YoutubeBlockElement',
 	'model.dotcomrendering.pageElements.ImageBlockElement',
 	'model.dotcomrendering.pageElements.VideoBlockElement',

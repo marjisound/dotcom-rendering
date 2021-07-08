@@ -1,6 +1,4 @@
-interface AssetHash {
-	[key: string]: { [key: string]: [] };
-}
+type AssetHash = Record<string, Record<string, []>>;
 
 let loadableManifest: AssetHash = {};
 let loadableManifestLegacy: AssetHash = {};
@@ -29,7 +27,7 @@ export const loadableManifestJson = loadableManifest;
 
 export const getScriptArrayFromFilename = (
 	filename: string,
-): { src: string; legacy: boolean }[] => {
+): Array<{ src: string; legacy: boolean }> => {
 	// 'ophan.87b473fc83e9ca6250fc.js' -> 'ophan'
 	const chunkName = filename.split('.')[0];
 	const chunks: string[] | undefined =
@@ -43,7 +41,7 @@ export const getScriptArrayFromFilename = (
 
 export const getScriptArrayFromChunkName = (
 	chunkName: string,
-): { src: string; legacy?: boolean }[] => {
+): Array<{ src: string; legacy?: boolean }> => {
 	const chunks: string[] | undefined =
 		loadableManifestJson.assetsByChunkName[chunkName];
 	const filename = chunks && chunks.length > 0 && chunks[0];

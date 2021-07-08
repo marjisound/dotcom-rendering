@@ -89,7 +89,7 @@ export const sections: SectionNielsenAPI[] = [
 	},
 ];
 
-const subsections: { [key: string]: any } = {
+const subsections: Record<string, any> = {
 	books: sections[1],
 	'childrens-books-site': sections[1],
 	business: sections[2],

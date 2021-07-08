@@ -8,7 +8,8 @@ import { textSans } from '@guardian/src-foundations/typography';
 import { from } from '@guardian/src-foundations/mq';
 
 import { getCookie } from '@root/src/web/browser/cookie';
-import { DropdownLinkType, Dropdown } from '@root/src/web/components/Dropdown';
+import type { DropdownLinkType } from '@root/src/web/components/Dropdown';
+import { Dropdown } from '@root/src/web/components/Dropdown';
 
 import ProfileIcon from '@frontend/static/icons/profile.svg';
 import { createAuthenticationEventParams } from '@root/src/lib/identity-component-event';

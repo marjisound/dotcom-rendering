@@ -21,9 +21,9 @@ import {
 } from '@root/src/web/browser/ophan/ophan';
 import { getZIndex } from '@root/src/web/lib/getZIndex';
 import { trackNonClickInteraction } from '@root/src/web/browser/ga/ga';
-import { WeeklyArticleHistory } from '@root/node_modules/@guardian/automat-client/dist/types';
+import type { WeeklyArticleHistory } from '@root/node_modules/@guardian/automat-client/dist/types';
 import { getForcedVariant } from '@root/src/web/lib/readerRevenueDevUtils';
-import { CanShowResult } from '@root/src/web/lib/messagePicker';
+import type { CanShowResult } from '@root/src/web/lib/messagePicker';
 import { setAutomat } from '@root/src/web/lib/setAutomat';
 import { useOnce } from '@root/src/web/lib/useOnce';
 
@@ -100,7 +100,7 @@ const buildPayload = ({
 };
 
 // TODO replace this with an imported version from the client lib
-const getBanner = (meta: { [key: string]: any }, url: string): Promise<any> => {
+const getBanner = (meta: Record<string, any>, url: string): Promise<any> => {
 	const json = JSON.stringify(meta);
 	return fetch(url, {
 		method: 'post',
@@ -293,7 +293,7 @@ const RemoteBanner = ({
 
 		window
 			.guardianPolyfilledImport(module.url)
-			.then((bannerModule: { [key: string]: JSX.Element }) => {
+			.then((bannerModule: Record<string, JSX.Element>) => {
 				setBanner(() => bannerModule[module.name]); // useState requires functions to be wrapped
 				sendOphanComponentEvent('INSERT', meta);
 			})
@@ -334,7 +334,7 @@ const RemoteBanner = ({
 				{/* eslint-disable react/jsx-props-no-spreading */}
 				<Banner
 					{...module.props}
-					// @ts-ignore
+					// @ts-expect-error
 					submitComponentEvent={submitComponentEvent}
 					email={email}
 				/>

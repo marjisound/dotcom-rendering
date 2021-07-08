@@ -6,7 +6,8 @@ import { HeadlineByline } from '@root/src/web/components/HeadlineByline';
 import { headline, textSans } from '@guardian/src-foundations/typography';
 import { from, until } from '@guardian/src-foundations/mq';
 import { space } from '@guardian/src-foundations';
-import { Display, Design, Format, Special } from '@guardian/types';
+import type { Format } from '@guardian/types';
+import { Display, Design, Special } from '@guardian/types';
 import { getZIndex } from '@frontend/web/lib/getZIndex';
 import { interactiveLegacyClasses } from '@root/src/web/layouts/lib/interactiveLegacyStyling';
 

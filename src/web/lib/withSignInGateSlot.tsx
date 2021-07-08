@@ -4,7 +4,7 @@
 const SignInGateSlot = <p id="sign-in-gate" />;
 
 export const withSignInGateSlot = (
-	articleElements: (JSX.Element | null | undefined)[],
+	articleElements: Array<JSX.Element | null | undefined>,
 ): React.ReactNode => {
 	return articleElements.map((element, i) => {
 		return (

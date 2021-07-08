@@ -28,7 +28,7 @@ type CandidateConfigWithTimeout<T> = CandidateConfig<T> & {
 };
 
 export type SlotConfig = {
-	candidates: CandidateConfig<any>[];
+	candidates: Array<CandidateConfig<any>>;
 	name: string;
 };
 
@@ -76,7 +76,7 @@ const timeoutify = <T>(
 	};
 };
 
-const clearAllTimeouts = (messages: CandidateConfigWithTimeout<any>[]) =>
+const clearAllTimeouts = (messages: Array<CandidateConfigWithTimeout<any>>) =>
 	messages.map((m) => m.cancelTimeout());
 
 const defaultShow = () => null;
@@ -99,12 +99,12 @@ export const pickMessage = ({
 		const candidateConfigsWithTimeout = candidates.map((c) =>
 			timeoutify(c, name),
 		);
-		const results: PendingMessage<any>[] = candidateConfigsWithTimeout.map(
-			(candidateConfig) => ({
-				candidateConfig,
-				canShow: candidateConfig.candidate.canShow(),
-			}),
-		);
+		const results: Array<
+			PendingMessage<any>
+		> = candidateConfigsWithTimeout.map((candidateConfig) => ({
+			candidateConfig,
+			canShow: candidateConfig.candidate.canShow(),
+		}));
 
 		const winnerResult = results.reduce<
 			Promise<WinningMessage<any> | null>

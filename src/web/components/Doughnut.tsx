@@ -69,13 +69,13 @@ export const Doughnut = ({
 	};
 
 	// Segments
-	const segments: {
+	const segments: Array<{
 		d: string;
 		color: string;
 		transform: string;
 		label: string;
 		value: number;
-	}[] = [];
+	}> = [];
 	let segmentAngle;
 	let endRadius;
 	let arc;

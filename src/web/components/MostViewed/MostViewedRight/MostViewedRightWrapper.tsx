@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect, RefObject } from 'react';
+import type { RefObject } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { css } from '@emotion/react';
 
 import { MostViewedRight } from './MostViewedRight';

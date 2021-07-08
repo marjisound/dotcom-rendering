@@ -17,15 +17,17 @@ import {
 	hasOptedOutOfArticleCount,
 } from '@root/src/web/lib/contributions';
 import { getForcedVariant } from '@root/src/web/lib/readerRevenueDevUtils';
-import { CanShowResult } from '@root/src/web/lib/messagePicker';
+import type { CanShowResult } from '@root/src/web/lib/messagePicker';
 import { initPerf } from '@root/src/web/browser/initPerf';
-import {
+import type {
 	OphanComponentEvent,
-	sendOphanComponentEvent,
-	submitComponentEvent,
 	SdcTestMeta,
 } from '@root/src/web/browser/ophan/ophan';
-import { Metadata } from '@guardian/automat-client/dist/types';
+import {
+	sendOphanComponentEvent,
+	submitComponentEvent,
+} from '@root/src/web/browser/ophan/ophan';
+import type { Metadata } from '@guardian/automat-client/dist/types';
 import { setAutomat } from '@root/src/web/lib/setAutomat';
 import { cmp } from '@guardian/consent-management-platform';
 import { getCookie } from '../../browser/cookie';
@@ -37,7 +39,7 @@ type PreEpicConfig = {
 	meta: SdcTestMeta;
 	module: {
 		url: string;
-		props: { [key: string]: any };
+		props: Record<string, any>;
 	};
 };
 

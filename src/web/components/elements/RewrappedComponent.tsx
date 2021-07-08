@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error
 import { jsx as _jsx } from 'react/jsx-runtime';
 import { ClassNames } from '@emotion/react';
 

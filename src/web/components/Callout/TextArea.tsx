@@ -11,7 +11,7 @@ const textAreaStyles = css`
 type Props = {
 	formField: CampaignFieldTextArea;
 	formData: { [key in string]: any };
-	setFormData: React.Dispatch<React.SetStateAction<{ [x: string]: any }>>;
+	setFormData: React.Dispatch<React.SetStateAction<Record<string, any>>>;
 };
 
 export const TextArea = ({ formField, formData, setFormData }: Props) => (

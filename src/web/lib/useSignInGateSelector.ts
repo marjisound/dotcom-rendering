@@ -1,6 +1,6 @@
-import { Runnable } from '@guardian/ab-core';
+import type { Runnable } from '@guardian/ab-core';
 import { useAB } from '@guardian/ab-react';
-import {
+import type {
 	SignInGateComponent,
 	CurrentSignInGateABTest,
 } from '@frontend/web/components/SignInGate/types';
@@ -32,8 +32,7 @@ export const useSignInGateSelector = (): [
 		id: test.id,
 	};
 
-	const gateVariant =
-		signInGateTestVariantToGateMapping?.[currentTest.variant];
+	const gateVariant = signInGateTestVariantToGateMapping[currentTest.variant];
 
 	if (!gateVariant) {
 		return [null, null];

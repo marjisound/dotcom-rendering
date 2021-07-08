@@ -1,4 +1,4 @@
-import { ABTest } from '@guardian/ab-core';
+import type { ABTest } from '@guardian/ab-core';
 import { abTestTest } from '@frontend/web/experiments/tests/ab-test-test';
 import { signInGateMainVariant } from '@frontend/web/experiments/tests/sign-in-gate-main-variant';
 import { signInGateMainControl } from '@frontend/web/experiments/tests/sign-in-gate-main-control';

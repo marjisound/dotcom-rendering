@@ -105,7 +105,7 @@ export const VeggieBurgerMenu: React.FC<{
 }> = ({ display }) => {
 	return (
 		/* eslint-disable @typescript-eslint/ban-ts-comment, jsx-a11y/label-has-associated-control, @typescript-eslint/no-unused-expressions, react/no-unknown-property, jsx-a11y/no-noninteractive-element-to-interactive-role */
-		// @ts-ignore
+		// @ts-expect-error
 		<label
 			id={veggieBurgerId}
 			css={veggieBurgerStyles(display)}
@@ -113,7 +113,7 @@ export const VeggieBurgerMenu: React.FC<{
 			key="OpenExpandedMenuButton"
 			htmlFor={navInputCheckboxId}
 			data-link-name="nav2 : veggie-burger: show"
-			// @ts-ignore
+			// @ts-expect-error
 			tabIndex={0}
 			role="button"
 			data-cy="veggie-burger"

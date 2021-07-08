@@ -3,8 +3,8 @@ import { css } from '@emotion/react';
 import { palette } from '@guardian/src-foundations';
 import { textSans, body } from '@guardian/src-foundations/typography';
 
+import type { Link } from '@root/src/lib/footer-links';
 import {
-	Link,
 	footerLinksNew,
 	LinkPlatform,
 	isOnPlatform,

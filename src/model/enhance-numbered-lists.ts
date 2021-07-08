@@ -58,7 +58,7 @@ const isStarRating = (element: CAPIElement): boolean => {
 	if (element._type !== 'model.dotcomrendering.pageElements.TextBlockElement')
 		return false;
 	const frag = JSDOM.fragment(element.html);
-	const hasPTags = frag?.firstElementChild?.nodeName === 'P';
+	const hasPTags = frag.firstElementChild?.nodeName === 'P';
 	const text = frag.textContent || '';
 	// Loop the string making sure each letter is a star
 	for (const letter of text) {
@@ -86,7 +86,7 @@ const extractStarCount = (element: CAPIElement): number => {
 
 const isStarableImage = (element: CAPIElement): boolean => {
 	return (
-		element?._type ===
+		element._type ===
 			'model.dotcomrendering.pageElements.ImageBlockElement' &&
 		element.role !== 'thumbnail'
 	);
@@ -193,7 +193,7 @@ const isItemLink = (element: CAPIElement): boolean => {
 	const hasULWrapper = frag.firstElementChild.nodeName === 'UL';
 	const hasOnlyOneChild = frag.firstElementChild.childElementCount === 1;
 	const hasLINestedWrapper =
-		frag.firstElementChild?.firstElementChild?.nodeName === 'LI';
+		frag.firstElementChild.firstElementChild?.nodeName === 'LI';
 
 	return hasULWrapper && hasOnlyOneChild && hasLINestedWrapper;
 };

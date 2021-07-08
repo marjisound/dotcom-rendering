@@ -6,12 +6,10 @@ import type { Props as BrazeBannerProps } from '@guardian/braze-components';
 import { submitComponentEvent } from '@root/src/web/browser/ophan/ophan';
 import type { BrazeMessagesInterface } from '@guardian/braze-components/logic';
 import { getBrazeMetaFromUrlFragment } from '@root/src/web/lib/braze/forceBrazeMessage';
-import { CanShowResult } from '@root/src/web/lib/messagePicker';
+import type { CanShowResult } from '@root/src/web/lib/messagePicker';
 
 type Meta = {
-	dataFromBraze: {
-		[key: string]: string;
-	};
+	dataFromBraze: Record<string, string>;
 	logImpressionWithBraze: () => void;
 	logButtonClickWithBraze: (id: number) => void;
 };

@@ -1,4 +1,4 @@
-const constructQuery = (query: { [key: string]: any }): string =>
+const constructQuery = (query: Record<string, any>): string =>
 	Object.keys(query)
 		.map((param: string) => {
 			const value = query[param];

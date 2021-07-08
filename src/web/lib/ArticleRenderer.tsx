@@ -2,7 +2,8 @@ import { css } from '@emotion/react';
 
 import { renderArticleElement } from '@root/src/web/lib/renderElement';
 import { withSignInGateSlot } from '@root/src/web/lib/withSignInGateSlot';
-import { Design, Format } from '@guardian/types';
+import type { Format } from '@guardian/types';
+import { Design } from '@guardian/types';
 import { interactiveLegacyClasses } from '../layouts/lib/interactiveLegacyStyling';
 
 // This is required for spacefinder to work!

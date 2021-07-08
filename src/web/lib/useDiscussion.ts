@@ -54,7 +54,7 @@ export const useDiscussion = (url: string) => {
 	const { data } = useApi<DiscussionResponse>(url);
 
 	return {
-		commentCount: data?.discussion?.commentCount,
-		isClosedForComments: data?.discussion?.isClosedForComments,
+		commentCount: data?.discussion.commentCount,
+		isClosedForComments: data?.discussion.isClosedForComments,
 	};
 };

@@ -24,7 +24,7 @@ export const htmlTemplate = ({
 }: {
 	title?: string;
 	description: string;
-	linkedData: { [key: string]: any };
+	linkedData: Record<string, any>;
 	loadableConfigScripts: string[];
 	priorityScriptTags: string[];
 	lowPriorityScriptTags: string[];
@@ -34,8 +34,8 @@ export const htmlTemplate = ({
 	windowGuardian: string;
 	gaPath: { modern: string; legacy: string };
 	ampLink?: string;
-	openGraphData: { [key: string]: string };
-	twitterData: { [key: string]: string };
+	openGraphData: Record<string, string>;
+	twitterData: Record<string, string>;
 	keywords: string;
 	accessibilityLink: string;
 }): string => {
@@ -50,7 +50,7 @@ export const htmlTemplate = ({
 	);
 
 	const generateMetaTags = (
-		dataObject: { [key: string]: string },
+		dataObject: Record<string, string>,
 		attributeName: 'name' | 'property',
 	) => {
 		if (dataObject) {

@@ -26,9 +26,9 @@ export const document = ({
 	scripts,
 	metadata,
 }: {
-	linkedData: { [key: string]: any }[];
+	linkedData: Array<Record<string, any>>;
 	title: string;
-	body: React.ReactElement<any>;
+	body: React.ReactElement;
 	scripts: string[];
 	metadata: Metadata;
 }) => {

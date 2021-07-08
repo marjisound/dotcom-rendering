@@ -1,4 +1,5 @@
-import { Result, ok, err } from '@guardian/types';
+import type { Result } from '@guardian/types';
+import { ok, err } from '@guardian/types';
 
 export type EpicDataFromBraze = {
 	componentName: 'Epic';
@@ -20,7 +21,7 @@ export type EpicDataFromBraze = {
 
 export type Variant = {
 	heading?: string;
-	paragraphs: Array<string>;
+	paragraphs: string[];
 	highlightedText?: string;
 	cta: {
 		text: string;

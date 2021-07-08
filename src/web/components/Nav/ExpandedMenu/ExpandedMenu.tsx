@@ -5,7 +5,7 @@ import { textSans } from '@guardian/src-foundations/typography';
 import { from, until } from '@guardian/src-foundations/mq';
 
 import { getZIndex } from '@root/src/web/lib/getZIndex';
-import { Display } from '@guardian/types';
+import type { Display } from '@guardian/types';
 
 import { ShowMoreMenu } from './ShowMoreMenu';
 import { VeggieBurgerMenu } from './VeggieBurgerMenu';

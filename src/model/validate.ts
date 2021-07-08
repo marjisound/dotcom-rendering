@@ -1,4 +1,5 @@
-import Ajv, { Options } from 'ajv';
+import type { Options } from 'ajv';
+import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 
 import schema from '@root/src/model/json-schema.json';
@@ -15,7 +16,7 @@ addFormats(ajv);
 
 const validate = ajv.compile(schema);
 
-export const validateAsCAPIType = (data: { [key: string]: any }): CAPIType => {
+export const validateAsCAPIType = (data: Record<string, any>): CAPIType => {
 	const isValid = validate(data);
 
 	if (!isValid) {

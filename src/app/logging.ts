@@ -1,11 +1,6 @@
 import path from 'path';
-import {
-	configure,
-	getLogger,
-	addLayout,
-	shutdown,
-	LoggingEvent,
-} from 'log4js';
+import type { LoggingEvent } from 'log4js';
+import { configure, getLogger, addLayout, shutdown } from 'log4js';
 
 const logLocation =
 	process.env.NODE_ENV === 'production'

@@ -3,7 +3,8 @@ import { css } from '@emotion/react';
 
 import { text } from '@guardian/src-foundations/palette';
 import { headline } from '@guardian/src-foundations/typography';
-import { from, between, Breakpoint } from '@guardian/src-foundations/mq';
+import type { Breakpoint } from '@guardian/src-foundations/mq';
+import { from, between } from '@guardian/src-foundations/mq';
 
 import { initPerf } from '@root/src/web/browser/initPerf';
 import { AdSlot, labelStyles } from '@root/src/web/components/AdSlot';
@@ -11,7 +12,7 @@ import { Lazy } from '@root/src/web/components/Lazy';
 
 import { useAB } from '@guardian/ab-react';
 import { abTestTest } from '@frontend/web/experiments/tests/ab-test-test';
-import { Display } from '@guardian/types';
+import type { Display } from '@guardian/types';
 
 const MostViewedFooterData = React.lazy(() => {
 	const { start, end } = initPerf('MostViewedFooterData');

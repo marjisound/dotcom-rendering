@@ -1,8 +1,6 @@
 import { ok, err } from '@guardian/types';
-import {
-	EpicDataFromBraze,
-	parseBrazeEpicParams,
-} from './parseBrazeEpicParams';
+import type { EpicDataFromBraze } from './parseBrazeEpicParams';
+import { parseBrazeEpicParams } from './parseBrazeEpicParams';
 
 describe('parseBrazeEpicParams', () => {
 	it('returns a variant when params from Braze are valid', () => {

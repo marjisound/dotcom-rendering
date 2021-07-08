@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
-import { Design, Format, Special } from '@guardian/types';
+import type { Format } from '@guardian/types';
+import { Design, Special } from '@guardian/types';
 import { neutral } from '@guardian/src-foundations/palette';
 
 const linkStyles = (format: Format, palette: Palette) => {

@@ -5,9 +5,9 @@ import {
 } from '@root/src/web/lib/hasCurrentBrazeUser';
 import { initPerf } from '@root/src/web/browser/initPerf';
 import { record } from '@root/src/web/browser/ophan/ophan';
+import type { BrazeMessagesInterface } from '@guardian/braze-components/logic';
 import {
 	BrazeMessages,
-	BrazeMessagesInterface,
 	LocalMessageCache,
 	NullBrazeMessages,
 } from '@guardian/braze-components/logic';

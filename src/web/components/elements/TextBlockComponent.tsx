@@ -9,7 +9,8 @@ import { unwrapHtml } from '@root/src/model/unwrapHtml';
 import { RewrappedComponent } from '@root/src/web/components/elements/RewrappedComponent';
 
 import { DropCap } from '@frontend/web/components/DropCap';
-import { Display, Design, Format, Special } from '@guardian/types';
+import type { Format } from '@guardian/types';
+import { Display, Design, Special } from '@guardian/types';
 import { decidePalette } from '@root/src/web/lib/decidePalette';
 
 type Props = {
@@ -90,7 +91,7 @@ const sanitiserOptions = {
 	allowedTags: false, // Leave tags from CAPI alone
 	allowedAttributes: false, // Leave attributes from CAPI alone
 	transformTags: {
-		a: (tagName: string, attribs: { [key: string]: any }) => ({
+		a: (tagName: string, attribs: Record<string, any>) => ({
 			tagName, // Just return anchors as is
 			attribs: {
 				...attribs, // Merge into the existing attributes

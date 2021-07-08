@@ -3,14 +3,10 @@ import fetch from 'node-fetch';
 export type AmpExperiment = {
 	sticky?: boolean;
 	consentNotificationId?: string;
-	variants: {
-		[key: string]: number; // floating point number
-	};
+	variants: Record<string, number>;
 };
 
-export type AmpExperiments = {
-	[key: string]: AmpExperiment;
-};
+export type AmpExperiments = Record<string, AmpExperiment>;
 
 export const ampExperimentsDataUrl =
 	process.env.GU_STAGE === 'PROD'

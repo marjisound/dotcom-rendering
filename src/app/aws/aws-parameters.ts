@@ -1,5 +1,5 @@
-import { Parameter } from 'aws-sdk/clients/ssm';
-import { PromiseResult } from 'aws-sdk/lib/request';
+import type { Parameter } from 'aws-sdk/clients/ssm';
+import type { PromiseResult } from 'aws-sdk/lib/request';
 
 import AWS from 'aws-sdk';
 
@@ -11,9 +11,7 @@ const STACK = 'frontend';
 
 const ssm = new AWS.SSM();
 
-interface ConfigMap {
-	[key: string]: any;
-}
+type ConfigMap = Record<string, any>;
 
 interface GuardianConfiguration {
 	getParameter: (key: string) => string;

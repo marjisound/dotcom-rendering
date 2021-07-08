@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Ad } from '@root/src/amp/components/Ad';
 
-type ObjectType = { [key: string]: any };
+type ObjectType = Record<string, any>;
 
 describe('AdComponent', () => {
 	const edition = 'UK';

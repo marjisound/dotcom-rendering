@@ -9,13 +9,13 @@ import { getCookie } from '@frontend/web/browser/cookie';
 import { useSignInGateSelector } from '@frontend/web/lib/useSignInGateSelector';
 
 import { useOnce } from '@frontend/web/lib/useOnce';
+import type { ComponentEventParams } from './componentEventTracking';
 import {
-	ComponentEventParams,
 	submitViewEventTracking,
 	withComponentId,
 } from './componentEventTracking';
 import { signInGateTestIdToComponentId } from './signInGate';
-import {
+import type {
 	CurrentSignInGateABTest,
 	SignInGateComponent,
 	SignInGateSelectorProps,
@@ -152,7 +152,7 @@ export const SignInGateSelector = ({
 		if (gateVariant && currentTest) {
 			// eslint-disable-next-line @typescript-eslint/no-floating-promises
 			gateVariant
-				?.canShow(CAPI, !!isSignedIn, currentTest)
+				.canShow(CAPI, !!isSignedIn, currentTest)
 				.then(setCanShowGate);
 		}
 	}, [currentTest, gateVariant, CAPI, isSignedIn]);

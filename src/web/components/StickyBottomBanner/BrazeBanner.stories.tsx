@@ -1,6 +1,7 @@
-import { ReactElement, useState, useEffect } from 'react';
+import type { ReactElement } from 'react';
+import { useState, useEffect } from 'react';
 
-import { Props as BrazeBannerProps } from '@guardian/braze-components';
+import type { Props as BrazeBannerProps } from '@guardian/braze-components';
 
 export default {
 	component: 'BrazeBanner',

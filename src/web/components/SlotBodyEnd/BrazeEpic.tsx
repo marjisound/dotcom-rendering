@@ -4,13 +4,13 @@ import { css } from '@emotion/react';
 import { either } from '@guardian/types';
 import type { BrazeMessagesInterface } from '@guardian/braze-components/logic';
 
-import {
-	parseBrazeEpicParams,
+import type {
 	EpicDataFromBraze,
 	Variant,
 } from '@root/src/web/lib/braze/parseBrazeEpicParams';
+import { parseBrazeEpicParams } from '@root/src/web/lib/braze/parseBrazeEpicParams';
 import { getBrazeMetaFromUrlFragment } from '@root/src/web/lib/braze/forceBrazeMessage';
-import { CanShowResult } from '@root/src/web/lib/messagePicker';
+import type { CanShowResult } from '@root/src/web/lib/messagePicker';
 import { useOnce } from '@root/src/web/lib/useOnce';
 import { joinUrl } from '@root/src/lib/joinUrl';
 import { useHasBeenSeen } from '@root/src/web/lib/useHasBeenSeen';
@@ -153,7 +153,7 @@ const BrazeEpic = ({
 			},
 			action: 'INSERT',
 		});
-	}, [meta?.dataFromBraze, epicRef.current]);
+	}, [meta.dataFromBraze, epicRef.current]);
 
 	useEffect(() => {
 		if (hasBeenSeen && meta && meta.dataFromBraze) {

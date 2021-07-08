@@ -594,7 +594,7 @@ describe('Enhance Images', () => {
 
 		// Need to ignore TS to check test works for other element types
 		it('will pass through other element types', () => {
-			// @ts-ignore
+			// @ts-expect-error
 			const input: CAPIType = {
 				...PhotoEssay,
 				blocks: [
@@ -602,12 +602,12 @@ describe('Enhance Images', () => {
 						...metaData,
 						elements: [
 							{
-								// @ts-ignore
+								// @ts-expect-error
 								_type:
 									'model.dotcomrendering.pageElements.model.dotcomrendering.pageElements.PullquoteBlockElement',
 								elementId: 'mockId',
 								html: '<p>A Pullquote</p>',
-								// @ts-ignore
+								// @ts-expect-error
 								pillar: Pillar.News,
 								role: 'inline',
 							},

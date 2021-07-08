@@ -4,7 +4,8 @@ import { headline, textSans } from '@guardian/src-foundations/typography';
 import { space } from '@guardian/src-foundations';
 
 import { BylineLink } from '@root/src/web/components/BylineLink';
-import { Display, Design, Format, Special } from '@guardian/types';
+import type { Format } from '@guardian/types';
+import { Display, Design, Special } from '@guardian/types';
 import { decidePalette } from '@root/src/web/lib/decidePalette';
 
 const wrapperStyles = css`

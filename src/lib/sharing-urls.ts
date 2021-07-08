@@ -1,8 +1,6 @@
 const appendParamsToBaseUrl: (
 	baseUrl: string,
-	params: {
-		[key: string]: string;
-	},
+	params: Record<string, string>,
 ) => string = (baseUrl, params) =>
 	Object.keys(params).reduce((shareUrl: string, param: string, i: number) => {
 		const separator = i > 0 ? '&' : '?';
@@ -25,9 +23,7 @@ export const getSharingUrls = (
 	const platforms: {
 		[K in SharePlatform]: {
 			userMessage: string;
-			params: {
-				[key: string]: string;
-			};
+			params: Record<string, string>;
 			baseUrl: string;
 		};
 	} = {

@@ -75,12 +75,12 @@ interface QuizAtomBlockElement {
 	id: string;
 	questions: QuestionType[];
 	resultBuckets: ResultBucketsType[];
-	resultGroups: {
+	resultGroups: Array<{
 		id: string;
 		title: string;
 		shareText: string;
 		minScore: number;
-	}[];
+	}>;
 }
 
 interface CodeBlockElement {
@@ -269,10 +269,10 @@ interface MediaAtomBlockElement {
 	elementId: string;
 	id: string;
 	assets: VideoAssets[];
-	posterImage?: {
+	posterImage?: Array<{
 		url: string;
 		width: number;
-	}[];
+	}>;
 	title?: string;
 	duration?: number;
 }
@@ -473,10 +473,10 @@ interface YoutubeBlockElement {
 	id: string;
 	channelId?: string;
 	duration?: number;
-	posterImage?: {
+	posterImage?: Array<{
 		url: string;
 		width: number;
-	}[];
+	}>;
 	expired: boolean;
 	overrideImage?: string;
 	altText?: string;
@@ -675,9 +675,7 @@ interface TimelineEvent {
 	toUnixDate?: number;
 }
 
-interface Switches {
-	[key: string]: boolean;
-}
+type Switches = Record<string, boolean>;
 
 type RatingSizeType = 'large' | 'medium' | 'small';
 
@@ -717,26 +715,26 @@ interface CampaignFieldFile extends CampaignField {
 
 interface CampaignFieldRadio extends CampaignField {
 	type: 'radio';
-	options: {
+	options: Array<{
 		label: string;
 		value: string;
-	}[];
+	}>;
 }
 
 interface CampaignFieldCheckbox extends CampaignField {
 	type: 'checkbox';
-	options: {
+	options: Array<{
 		label: string;
 		value: string;
-	}[];
+	}>;
 }
 
 interface CampaignFieldSelect extends CampaignField {
 	type: 'select';
-	options: {
+	options: Array<{
 		label: string;
 		value: string;
-	}[];
+	}>;
 }
 
 // -------------------------------------

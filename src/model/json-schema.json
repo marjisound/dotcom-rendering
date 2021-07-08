@@ -266,16 +266,10 @@
             "type": "boolean"
         },
         "openGraphData": {
-            "type": "object",
-            "additionalProperties": {
-                "type": "string"
-            }
+            "$ref": "#/definitions/Record<string,string>"
         },
         "twitterData": {
-            "type": "object",
-            "additionalProperties": {
-                "type": "string"
-            }
+            "$ref": "#/definitions/Record<string,string>"
         },
         "webURL": {
             "type": "string"
@@ -283,8 +277,7 @@
         "linkedData": {
             "type": "array",
             "items": {
-                "type": "object",
-                "additionalProperties": {}
+                "$ref": "#/definitions/Record<string,any>"
             }
         },
         "config": {
@@ -3602,6 +3595,12 @@
                 "url"
             ]
         },
+        "Record<string,string>": {
+            "type": "object"
+        },
+        "Record<string,any>": {
+            "type": "object"
+        },
         "ConfigType": {
             "description": "the config model will contain useful app/site\nlevel data. Although currently derived from the config model\nconstructed in frontend and passed to dotcom-rendering\nthis data could eventually be defined in dotcom-rendering",
             "type": "object",
@@ -3619,16 +3618,10 @@
                     "type": "string"
                 },
                 "switches": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "boolean"
-                    }
+                    "$ref": "#/definitions/Record<string,boolean>"
                 },
                 "abTests": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
+                    "$ref": "#/definitions/Record<string,string>"
                 },
                 "dfpAccountId": {
                     "type": "string"
@@ -3670,8 +3663,7 @@
                     "type": "string"
                 },
                 "sharedAdTargeting": {
-                    "type": "object",
-                    "additionalProperties": {}
+                    "$ref": "#/definitions/Record<string,any>"
                 },
                 "isPaidContent": {
                     "type": "boolean"
@@ -3703,10 +3695,7 @@
                 "references": {
                     "type": "array",
                     "items": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "string"
-                        }
+                        "$ref": "#/definitions/Record<string,string>"
                     }
                 },
                 "host": {
@@ -3790,6 +3779,9 @@
                 "stage",
                 "switches"
             ]
+        },
+        "Record<string,boolean>": {
+            "type": "object"
         },
         "CommercialProperties": {
             "type": "object",

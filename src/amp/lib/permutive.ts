@@ -39,7 +39,7 @@ export const generatePermutivePayload = (
 					.map((s) => s.trim())
 					.join()
 			: null;
-	const config: { [key: string]: any } = {
+	const config: Record<string, any> = {
 		'properties.content.premium': rawConfig.isPaidContent,
 		'properties.content.type': rawConfig.contentType,
 		'properties.content.series': rawConfig.series,
@@ -53,11 +53,11 @@ export const generatePermutivePayload = (
 		'properties.user.edition': rawConfig.edition,
 	};
 
-	const payload: { [key: string]: any } = Object.keys(config)
+	const payload: Record<string, any> = Object.keys(config)
 		.filter(
 			(key) => typeof config[key] !== 'undefined' && config[key] !== null,
 		)
-		.reduce((acc: { [key: string]: any }, key) => {
+		.reduce((acc: Record<string, any>, key) => {
 			acc[key] = config[key];
 			return acc;
 		}, {});

@@ -22,8 +22,8 @@ export interface WindowGuardianConfig {
 	libs: {
 		googletag: string;
 	};
-	switches: { [key: string]: boolean };
-	tests?: { [key: string]: string };
+	switches: Record<string, boolean>;
+	tests?: Record<string, string>;
 	ophan: {
 		pageViewId: string;
 		browserId: string;
@@ -126,7 +126,7 @@ export const makeGuardianBrowserCAPI = (CAPI: CAPIType): CAPIBrowserType => {
 	};
 
 	const contributionsServiceUrl =
-		process?.env?.SDC_URL ?? CAPI.contributionsServiceUrl;
+		process.env.SDC_URL ?? CAPI.contributionsServiceUrl;
 
 	return {
 		format: CAPI.format,

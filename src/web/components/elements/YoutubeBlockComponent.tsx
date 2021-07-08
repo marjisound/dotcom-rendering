@@ -22,10 +22,10 @@ type Props = {
 	role: RoleType;
 	hideCaption?: boolean;
 	overrideImage?: string;
-	posterImage?: {
+	posterImage?: Array<{
 		url: string;
 		width: number;
-	}[];
+	}>;
 	adTargeting?: AdTargeting;
 	isMainMedia?: boolean;
 	height?: number;

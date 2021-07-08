@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import { ArticleModel } from '@root/src/amp/types/ArticleModel';
+import type { ArticleModel } from '@root/src/amp/types/ArticleModel';
 import { TopMetaLiveblog } from '@root/src/amp/components/topMeta/TopMetaLiveblog';
 import { SubMeta } from '@root/src/amp/components/SubMeta';
 import { palette } from '@guardian/src-foundations';

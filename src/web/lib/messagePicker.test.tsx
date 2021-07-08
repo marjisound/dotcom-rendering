@@ -1,5 +1,6 @@
 import { record } from '@root/src/web/browser/ophan/ophan';
-import { pickMessage, CanShowResult, SlotConfig } from './messagePicker';
+import type { CanShowResult, SlotConfig } from './messagePicker';
+import { pickMessage } from './messagePicker';
 
 jest.mock('@root/src/web/browser/ophan/ophan', () => ({
 	record: jest.fn(),

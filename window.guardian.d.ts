@@ -1,5 +1,5 @@
-import { WindowGuardianConfig } from '@root/src/model/window-guardian';
-import { ReaderRevenueDevUtils } from '@root/src/web/lib/readerRevenueDevUtils';
+import type { WindowGuardianConfig } from '@root/src/model/window-guardian';
+import type { ReaderRevenueDevUtils } from '@root/src/web/lib/readerRevenueDevUtils';
 
 declare global {
     /* ~ Here, declare things that go in the global namespace, or augment
@@ -9,7 +9,7 @@ declare global {
         guardian: {
             app: {
                 data: {
-                    GA: { [key: string]: any }
+                    GA: Record<string, any>
                     [key: string]: any
                     CAPI: CAPIBrowserType
                 };
@@ -20,7 +20,7 @@ declare global {
             polyfilled: boolean;
             onPolyfilled: () => void;
             queue: Array<() => void>;
-            config: WindowGuardianConfig;
+            config?: WindowGuardianConfig; // `undefined` in Storybook
             ophan: {
                 setEventEmitter: () => void; // We don't currently have a custom eventEmitter on DCR - like 'mediator' in Frontend.
                 trackComponentAttention: (

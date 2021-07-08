@@ -5,7 +5,7 @@ import { text } from '@guardian/src-foundations/palette';
 import { palette } from '@guardian/src-foundations';
 import { textSans, body } from '@guardian/src-foundations/typography';
 
-import { ArticleModel } from '@root/src/amp/types/ArticleModel';
+import type { ArticleModel } from '@root/src/amp/types/ArticleModel';
 import { MainMedia } from '@root/src/amp/components/MainMedia';
 import { Byline } from '@root/src/amp/components/topMeta/Byline';
 import { TopMetaExtras } from '@root/src/amp/components/topMeta/TopMetaExtras';

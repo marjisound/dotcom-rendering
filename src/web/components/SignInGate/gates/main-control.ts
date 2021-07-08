@@ -1,5 +1,5 @@
 import { hasUserDismissedGate } from '@frontend/web/components/SignInGate/dismissGate';
-import {
+import type {
 	CurrentSignInGateABTest,
 	SignInGateComponent,
 } from '@frontend/web/components/SignInGate/types';

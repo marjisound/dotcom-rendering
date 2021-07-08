@@ -37,7 +37,7 @@ interface FilterOptions {
 	threads: ThreadsType;
 }
 
-const objAsParams = (obj: { [key: string]: any }): string => {
+const objAsParams = (obj: Record<string, any>): string => {
 	const params = Object.keys(obj)
 		.map((key) => {
 			return `${key}=${obj[key]}`;
@@ -48,9 +48,9 @@ const objAsParams = (obj: { [key: string]: any }): string => {
 };
 
 const initFiltersFromLocalStorage = (): FilterOptions => {
-	let threads: { [key: string]: ThreadsType } | undefined;
-	let pageSize: { [key: string]: PageSizeType } | undefined;
-	let orderBy: { [key: string]: OrderByType } | undefined;
+	let threads: Record<string, ThreadsType> | undefined;
+	let pageSize: Record<string, PageSizeType> | undefined;
+	let orderBy: Record<string, OrderByType> | undefined;
 
 	try {
 		// Try to read from local storage

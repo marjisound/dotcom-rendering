@@ -5,7 +5,7 @@ import { palette } from '@guardian/src-foundations';
 import { headline } from '@guardian/src-foundations/typography';
 
 import { pillarPalette_DO_NOT_USE } from '@root/src/lib/pillars';
-import { ArticleModel } from '@root/src/amp/types/ArticleModel';
+import type { ArticleModel } from '@root/src/amp/types/ArticleModel';
 import { MainMedia } from '@root/src/amp/components/MainMedia';
 import { Byline } from '@root/src/amp/components/topMeta/Byline';
 import { string as curly } from 'curlyquotes';

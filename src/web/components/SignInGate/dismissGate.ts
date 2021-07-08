@@ -18,9 +18,9 @@ const localStorageDismissedCountKey = (
 };
 
 // Invalid json stored against `localStorageKey` should not break signin gate for a user forever
-const getSigninGatePrefsSafely = (): { [key: string]: any } => {
+const getSigninGatePrefsSafely = (): Record<string, any> => {
 	try {
-		const prefs: { [key: string]: any } = JSON.parse(
+		const prefs: Record<string, any> = JSON.parse(
 			localStorage.getItem(localStorageKey) || '{}',
 		);
 

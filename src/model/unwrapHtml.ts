@@ -12,7 +12,7 @@ export const unwrapHtml = ({
 	fixes,
 	html,
 }: {
-	fixes: { prefix: string; suffix: string; unwrappedElement?: string }[];
+	fixes: Array<{ prefix: string; suffix: string; unwrappedElement?: string }>;
 	html: string;
 }): {
 	unwrappedHtml: string;

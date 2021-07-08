@@ -1,4 +1,4 @@
-import { ABTest } from '@guardian/ab-core';
+import type { ABTest } from '@guardian/ab-core';
 
 // Sign in Gate A/B Tests
 import { signInGateMainVariant } from '@root/src/web/experiments/tests/sign-in-gate-main-variant';
@@ -10,7 +10,7 @@ import { signInGateComponent as gateMainVariant } from '@root/src/web/components
 import { signInGateComponent as gateMainControl } from '@root/src/web/components/SignInGate/gates/main-control';
 import { signInGateComponent as gateUsMandatoryVariant } from '@root/src/web/components/SignInGate/gates/us-mandatory-variant';
 import { signInGateComponent as gateUsMandatoryControl } from '@root/src/web/components/SignInGate/gates/us-mandatory-control';
-import { SignInGateTestMap } from './types';
+import type { SignInGateTestMap } from './types';
 
 // component name, should always be sign-in-gate
 export const componentName = 'sign-in-gate';
@@ -20,7 +20,7 @@ export const componentName = 'sign-in-gate';
    signInGateTestVariantToGateMapping, and in turn match each test id to an component
    id in signInGateTestIdToComponentId
 */
-export const signInGateTests: ReadonlyArray<ABTest> = [
+export const signInGateTests: readonly ABTest[] = [
 	signInGateMainVariant,
 	signInGateMainControl,
 	signInGateUsMandatory,
@@ -33,7 +33,7 @@ export const signInGateTestVariantToGateMapping: SignInGateTestMap = {
 	'us-mandatory-gate-variant': gateUsMandatoryVariant,
 };
 
-export const signInGateTestIdToComponentId: { [key: string]: string } = {
+export const signInGateTestIdToComponentId: Record<string, string> = {
 	SignInGateMainVariant: 'main_variant_4',
 	SignInGateMainControl: 'main_control_4',
 	SignInGateUsMandatory: 'us_mandatory',

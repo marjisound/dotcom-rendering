@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { Display } from '@guardian/types';
+import type { Display } from '@guardian/types';
 
 import { AdSlot } from '@root/src/web/components/AdSlot';
 import { Hide } from '@root/src/web/components/Hide';

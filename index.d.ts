@@ -180,7 +180,7 @@ interface AdTargetParam {
 interface AdTargeting {
 	adUnit: string;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	customParams: { [key: string]: any };
+	customParams: Record<string, any>;
 }
 
 interface SectionNielsenAPI {
@@ -425,10 +425,10 @@ interface CAPIType {
 	subMetaKeywordLinks: SimpleLinkType[];
 	shouldHideAds: boolean;
 	isAdFreeUser: boolean;
-	openGraphData: { [key: string]: string };
-	twitterData: { [key: string]: string };
+	openGraphData: Record<string, string>;
+	twitterData: Record<string, string>;
 	webURL: string;
-	linkedData: { [key: string]: any }[];
+	linkedData: Array<Record<string, any>>;
 	config: ConfigType;
 
 	showBottomSocialButtons: boolean;
@@ -663,8 +663,8 @@ interface ConfigType extends CommercialConfigType {
 	sentryPublicApiKey: string;
 	sentryHost: string;
 	dcrSentryDsn: string;
-	switches: { [key: string]: boolean };
-	abTests: { [key: string]: string };
+	switches: Record<string, boolean>;
+	abTests: Record<string, string>;
 	dfpAccountId: string;
 	commercialBundleUrl: string;
 	revisionNumber: string;
@@ -679,7 +679,7 @@ interface ConfigType extends CommercialConfigType {
 	edition: string;
 	section: string;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	sharedAdTargeting: { [key: string]: any };
+	sharedAdTargeting: Record<string, any>;
 	isPaidContent?: boolean;
 	keywordIds: string;
 	showRelatedContent: boolean;
@@ -689,7 +689,7 @@ interface ConfigType extends CommercialConfigType {
 	discussionD2Uid: string;
 	discussionApiClientHeader: string;
 	isPhotoEssay?: boolean;
-	references?: { [key: string]: string }[];
+	references?: Array<Record<string, string>>;
 	host?: string;
 	idUrl?: string;
 	mmaUrl?: string;
@@ -720,7 +720,7 @@ interface ConfigTypeBrowser {
 	edition: string;
 	section: string;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	sharedAdTargeting: { [key: string]: any };
+	sharedAdTargeting: Record<string, any>;
 	adUnit: string;
 	idApiUrl: string;
 	discussionApiUrl: string;
@@ -764,7 +764,7 @@ interface DCRServerDocumentData {
 	CAPI: CAPIType;
 	NAV: NavType;
 	GA: GADataType;
-	linkedData: { [key: string]: any; };
+	linkedData: Record<string, any>;
 }
 
 interface BrowserNavType {
@@ -778,7 +778,7 @@ interface DCRBrowserDocumentData {
 	CAPI: CAPIBrowserType;
 	NAV: BrowserNavType;
 	GA: GADataType;
-	linkedData: { [key: string]: any; };
+	linkedData: Record<string, any>;
 }
 
 // All Components that are loaded with loadable

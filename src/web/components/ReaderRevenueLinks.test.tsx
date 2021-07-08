@@ -3,9 +3,10 @@ import { shouldHideSupportMessaging as shouldHideSupportMessaging_ } from '@root
 import { ABProvider } from '@guardian/ab-react';
 import { ReaderRevenueLinks } from './ReaderRevenueLinks';
 
-const shouldHideSupportMessaging: {
-	[key: string]: any;
-} = shouldHideSupportMessaging_;
+const shouldHideSupportMessaging: Record<
+	string,
+	any
+> = shouldHideSupportMessaging_;
 
 jest.mock('@root/src/web/lib/contributions', () => ({
 	shouldHideSupportMessaging: jest.fn(() => true),

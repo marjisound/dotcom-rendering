@@ -1,5 +1,6 @@
 import * as path from 'path';
-import express, { Request, Response } from 'express';
+import type { Request, Response } from 'express';
+import express from 'express';
 import fetch from 'node-fetch';
 import responseTime from 'response-time';
 
@@ -18,10 +19,8 @@ import {
 	renderInteractive,
 } from '@root/src/web/server/render';
 
-import {
-	getGuardianConfiguration,
-	GuardianConfiguration,
-} from './aws/aws-parameters';
+import type { GuardianConfiguration } from './aws/aws-parameters';
+import { getGuardianConfiguration } from './aws/aws-parameters';
 import { recordBaselineCloudWatchMetrics } from './aws/metrics-baseline';
 import { logger } from './logging';
 

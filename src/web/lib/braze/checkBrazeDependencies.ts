@@ -17,7 +17,7 @@ type FailureResult = {
 
 type DependenciesResult = SuccessResult | FailureResult;
 
-type ResultData = { [key: string]: string | boolean };
+type ResultData = Record<string, string | boolean>;
 
 type DependencyResult = {
 	name: string;

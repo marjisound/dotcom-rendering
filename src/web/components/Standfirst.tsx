@@ -181,10 +181,7 @@ export const Standfirst = ({ format, standfirst }: Props) => {
 					allowedTags: false, // Leave tags from CAPI alone
 					allowedAttributes: false, // Leave attributes from CAPI alone
 					transformTags: {
-						a: (
-							tagName: string,
-							attribs: { [key: string]: any },
-						) => ({
+						a: (tagName: string, attribs: Record<string, any>) => ({
 							tagName, // Just return anchors as is
 							attribs: {
 								...attribs, // Merge into the existing attributes

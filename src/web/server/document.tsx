@@ -32,7 +32,7 @@ interface RenderToStringResult {
 const generateScriptTags = (
 	scripts: Array<{ src: string; legacy?: boolean }>,
 ) =>
-	scripts.reduce((scriptTags, script) => {
+	scripts.reduce<string[]>((scriptTags, script) => {
 		let attrs = 'defer';
 
 		if (Object.prototype.hasOwnProperty.call(script, 'legacy')) {
@@ -43,7 +43,7 @@ const generateScriptTags = (
 			...scriptTags,
 			`<script ${attrs} src="${script.src}"></script>`,
 		];
-	}, [] as string[]);
+	}, []);
 
 interface Props {
 	data: DCRServerDocumentData;
@@ -174,14 +174,14 @@ export const document = ({ data }: Props): string => {
 	// Once we have the chunks for the page, we can add them directly to the loadableExtractor
 	chunksForPage.forEach((chunk) => {
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
+		// @ts-expect-error
 		loadableExtractor.addChunk(chunk.chunkName); // addChunk is *undocumented* and not in TS types. It allows manually adding chunks to extractor.
 	});
 
-	let arrayOfLoadableScriptObjects: {
+	let arrayOfLoadableScriptObjects: Array<{
 		src: string;
 		legacy: boolean;
-	}[] = [];
+	}> = [];
 
 	// Pre assets returns an array of objects structured as:
 	// {
@@ -195,7 +195,7 @@ export const document = ({ data }: Props): string => {
 	// }
 	//
 
-	const preAssets: {
+	const preAssets: Array<{
 		filename: string;
 		scriptType: string;
 		chunk: string;
@@ -203,10 +203,10 @@ export const document = ({ data }: Props): string => {
 		path: string;
 		type: string;
 		linkType: string;
-	}[] =
+	}> =
 		// PreAssets is *undocumented* and not in TS types. It returns the webpack asset for each script.
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
+		// @ts-expect-error
 		loadableExtractor.getPreAssets();
 
 	preAssets.forEach((script) => {

@@ -22,8 +22,8 @@ import { getCookie } from '@root/src/web/browser/cookie';
 import type { OphanComponentEvent, TestMeta } from '@guardian/types';
 import { useHasBeenSeen } from '@root/src/web/lib/useHasBeenSeen';
 import { addTrackingCodesToUrl } from '@root/src/web/lib/acquisitions';
+import type { OphanRecordFunction } from '@root/src/web/browser/ophan/ophan';
 import {
-	OphanRecordFunction,
 	sendOphanComponentEvent,
 	submitComponentEvent,
 } from '@root/src/web/browser/ophan/ophan';

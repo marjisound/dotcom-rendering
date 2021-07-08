@@ -1,9 +1,7 @@
 import { getCookie } from '@root/src/web/browser/cookie';
 import { onConsentChange } from '@guardian/consent-management-platform';
-import {
-	getIdApiUserData,
-	IdApiUserData,
-} from '@root/src/web/lib/getIdapiUserData';
+import type { IdApiUserData } from '@root/src/web/lib/getIdapiUserData';
+import { getIdApiUserData } from '@root/src/web/lib/getIdapiUserData';
 
 // User Atributes API cookies (dropped on sign-in)
 export const HIDE_SUPPORT_MESSAGING_COOKIE = 'gu_hide_support_messaging';

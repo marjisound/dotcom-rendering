@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 
 import { border } from '@guardian/src-foundations/palette';
-import { from, Breakpoint } from '@guardian/src-foundations/mq';
+import type { Breakpoint } from '@guardian/src-foundations/mq';
+import { from } from '@guardian/src-foundations/mq';
 
 import { useApi } from '@root/src/web/lib/useApi';
 import { joinUrl } from '@root/src/lib/joinUrl';

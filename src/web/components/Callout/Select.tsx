@@ -3,7 +3,7 @@ import { FieldLabel } from './FieldLabel';
 type Props = {
 	formField: CampaignFieldSelect;
 	formData: { [key in string]: any };
-	setFormData: React.Dispatch<React.SetStateAction<{ [x: string]: any }>>;
+	setFormData: React.Dispatch<React.SetStateAction<Record<string, any>>>;
 };
 
 export const Select = ({ formField, formData, setFormData }: Props) => (

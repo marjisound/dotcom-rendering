@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { useOnce } from '@root/src/web/lib/useOnce';
 
-import {
-	pickMessage,
+import type {
 	SlotConfig,
 	MaybeFC,
 	CandidateConfig,
 } from '@root/src/web/lib/messagePicker';
+import { pickMessage } from '@root/src/web/lib/messagePicker';
 
 import type { BrazeMessagesInterface } from '@guardian/braze-components/logic';
+import type {
+	CanShowData as RRCanShowData,
+	EpicConfig as RREpicConfig,
+} from './ReaderRevenueEpic';
 import {
 	ReaderRevenueEpic,
 	canShow as canShowReaderRevenueEpic,
-	CanShowData as RRCanShowData,
-	EpicConfig as RREpicConfig,
 } from './ReaderRevenueEpic';
 import { MaybeBrazeEpic, canShow as canShowBrazeEpic } from './BrazeEpic';
 

@@ -2,7 +2,7 @@ import get from 'lodash.get';
 
 import { findPillar } from './find-pillar';
 
-type ObjectType = { [key: string]: any };
+type ObjectType = Record<string, any>;
 
 const getString = (
 	obj: ObjectType,

@@ -4,7 +4,7 @@ import { FieldLabel } from './FieldLabel';
 type Props = {
 	formField: CampaignFieldCheckbox;
 	formData: { [key in string]: string[] };
-	setFormData: React.Dispatch<React.SetStateAction<{ [x: string]: any }>>;
+	setFormData: React.Dispatch<React.SetStateAction<Record<string, any>>>;
 };
 
 export const CheckboxSelect = ({ formField, formData, setFormData }: Props) => (

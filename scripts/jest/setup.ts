@@ -1,7 +1,7 @@
 // add some helpful assertions
 import 'jest-dom/extend-expect';
 
-import { WindowGuardianConfig } from '@root/src/model/window-guardian';
+import type { WindowGuardianConfig } from '@root/src/model/window-guardian';
 
 const windowGuardianConfig = {
     page: {
@@ -25,7 +25,7 @@ const windowGuardian = {
     ophan: {
         setEventEmitter: () => null,
         trackComponentAttention: () => null,
-        record: ({}: { [key: string]: any }) => null,
+        record: ({}: Record<string, any>) => null,
         viewId: '',
         pageViewId: '',
     },
@@ -62,16 +62,14 @@ const windowGuardian = {
 // Stub global Guardian object
 // We should never be able to directly set things to the global window object.
 // But in this case we want to stub things for testing, so it's ok to ignore this rule
-// @ts-ignore
+// @ts-expect-error
 window.guardian = windowGuardian;
 
 // Mock Local Storage
 // See: https://github.com/facebook/jest/issues/2098#issuecomment-260733457
 // eslint-disable-next-line func-names
 const localStorageMock = (function () {
-    let store: {
-        [key: string]: string;
-    } = {};
+    let store: Record<string, string> = {};
     return {
         getItem(key: string) {
             return store[key] || null;

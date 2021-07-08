@@ -1,22 +1,24 @@
 import { useState } from 'react';
 import { cmp } from '@guardian/consent-management-platform';
+import type {
+	BannerProps,
+	CanShowFunctionType,
+} from '@root/src/web/components/StickyBottomBanner/ReaderRevenueBanner';
 import {
 	canShowRRBanner,
 	canShowPuzzlesBanner,
 	ReaderRevenueBanner,
 	PuzzlesBanner,
-	BannerProps,
-	CanShowFunctionType,
 } from '@root/src/web/components/StickyBottomBanner/ReaderRevenueBanner';
 import { getAlreadyVisitedCount } from '@root/src/web/lib/alreadyVisited';
 import { useOnce } from '@root/src/web/lib/useOnce';
-import {
-	pickMessage,
+import type {
 	SlotConfig,
 	MaybeFC,
 	CandidateConfig,
 } from '@root/src/web/lib/messagePicker';
-import { CountryCode } from '@guardian/types';
+import { pickMessage } from '@root/src/web/lib/messagePicker';
+import type { CountryCode } from '@guardian/types';
 import type { BrazeMessagesInterface } from '@guardian/braze-components/logic';
 import { useSignInGateWillShow } from '@root/src/web/lib/useSignInGateWillShow';
 import { BrazeBanner, canShow as canShowBrazeBanner } from './BrazeBanner';
@@ -40,7 +42,7 @@ const getBannerLastClosedAt = (key: string): string | undefined => {
 	const item = localStorage.getItem(`gu.prefs.${key}`) as undefined | string;
 
 	if (item) {
-		const parsedItem = JSON.parse(item) as { [key: string]: any };
+		const parsedItem = JSON.parse(item) as Record<string, any>;
 		return parsedItem.value;
 	}
 };

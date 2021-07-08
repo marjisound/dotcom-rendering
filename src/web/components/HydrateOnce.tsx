@@ -1,4 +1,5 @@
-import { useState, SetStateAction } from 'react';
+import type { SetStateAction } from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import { initPerf } from '@root/src/web/browser/initPerf';
@@ -55,7 +56,7 @@ export const HydrateOnce = ({ rootId, children, waitFor = [] }: Props) => {
 		end();
 	});
 	setAlreadyHydrated(true);
-	// @ts-ignore
+	// @ts-expect-error
 	if (window.STORYBOOK_ENV) {
 		window.addEventListener(resetHydrationStateEventName, () =>
 			setAlreadyHydratedToFalse()(setAlreadyHydrated),

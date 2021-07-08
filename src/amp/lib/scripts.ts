@@ -1,6 +1,9 @@
 const notEmpty = (value: string | null): value is string => value !== null;
-const unique = (value: string | null, index: number, self: (string | null)[]) =>
-	value && self.indexOf(value) === index;
+const unique = (
+	value: string | null,
+	index: number,
+	self: Array<string | null>,
+) => value && self.indexOf(value) === index;
 
 export const extractScripts: (
 	elements: CAPIElement[],

@@ -8,13 +8,14 @@ import { Header } from '@root/src/amp/components/Header';
 import { Onward } from '@root/src/amp/components/Onward';
 import { AdConsent } from '@root/src/amp/components/AdConsent';
 import { Sidebar } from '@root/src/amp/components/Sidebar';
-import { Analytics, AnalyticsModel } from '@root/src/amp/components/Analytics';
+import type { AnalyticsModel } from '@root/src/amp/components/Analytics';
+import { Analytics } from '@root/src/amp/components/Analytics';
 import { filterForTagsOfType } from '@root/src/amp/lib/tag-utils';
 import { AnalyticsIframe } from '@root/src/amp/components/AnalyticsIframe';
 import { palette } from '@guardian/src-foundations';
-import { ArticleModel } from '@root/src/amp/types/ArticleModel';
+import type { ArticleModel } from '@root/src/amp/types/ArticleModel';
 import { AmpExperimentComponent } from '@root/src/amp/components/AmpExperiment';
-import { AmpExperiments } from '@root/src/amp/server/ampExperimentCache';
+import type { AmpExperiments } from '@root/src/amp/server/ampExperimentCache';
 
 const containerStyles = css`
 	margin: auto;

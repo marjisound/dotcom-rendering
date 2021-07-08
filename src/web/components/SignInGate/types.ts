@@ -28,4 +28,4 @@ export interface SignInGateSelectorProps {
 	CAPI: CAPIBrowserType;
 }
 
-export type SignInGateTestMap = { [name: string]: SignInGateComponent };
+export type SignInGateTestMap = Record<string, SignInGateComponent>;

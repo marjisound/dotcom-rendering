@@ -6,7 +6,7 @@ import { FieldLabel } from './FieldLabel';
 type FieldProp = {
 	formField: CampaignFieldRadio;
 	formData: { [key in string]: any };
-	setFormData: React.Dispatch<React.SetStateAction<{ [x: string]: any }>>;
+	setFormData: React.Dispatch<React.SetStateAction<Record<string, any>>>;
 };
 
 export const RadioSelect = ({

@@ -42,12 +42,12 @@ import { getLocaleCode } from '@frontend/web/lib/getCountryCode';
 import { getUser } from '@root/src/web/lib/getUser';
 
 import { FocusStyleManager } from '@guardian/src-foundations/utils';
-import { Display, Design } from '@guardian/types';
-import type { Format, CountryCode } from '@guardian/types';
+import type { Display, Design, Format, CountryCode } from '@guardian/types';
+
 import { incrementAlreadyVisited } from '@root/src/web/lib/alreadyVisited';
 import { incrementDailyArticleCount } from '@frontend/web/lib/dailyArticleCount';
 import { hasOptedOutOfArticleCount } from '@frontend/web/lib/contributions';
-import { ReaderRevenueDevUtils } from '@root/src/web/lib/readerRevenueDevUtils';
+import type { ReaderRevenueDevUtils } from '@root/src/web/lib/readerRevenueDevUtils';
 import { buildAdTargeting } from '@root/src/lib/ad-targeting';
 import { getSharingUrls } from '@root/src/lib/sharing-urls';
 
@@ -62,12 +62,10 @@ import { ClickToView } from '@root/src/web/components/ClickToView';
 import { LabsHeader } from '@root/src/web/components/LabsHeader';
 
 import type { BrazeMessagesInterface } from '@guardian/braze-components/logic';
-import { OphanRecordFunction } from '@guardian/ab-core/dist/types';
-import { ConsentState } from '@guardian/consent-management-platform/dist/types';
-import {
-	submitComponentEvent,
-	OphanComponentEvent,
-} from '../browser/ophan/ophan';
+import type { OphanRecordFunction } from '@guardian/ab-core/dist/types';
+import type { ConsentState } from '@guardian/consent-management-platform/dist/types';
+import type { OphanComponentEvent } from '../browser/ophan/ophan';
+import { submitComponentEvent } from '../browser/ophan/ophan';
 import { trackPerformance } from '../browser/ga/ga';
 import { decidePalette } from '../lib/decidePalette';
 import { buildBrazeMessages } from '../lib/braze/buildBrazeMessages';
@@ -149,7 +147,7 @@ export const App = ({ CAPI, NAV, ophanRecord }: Props) => {
 		Promise<BrazeMessagesInterface>
 	>();
 
-	const pageViewId = window.guardian?.config?.ophan?.pageViewId;
+	const { pageViewId } = window.guardian.config.ophan;
 	const [browserId, setBrowserId] = useState<string | undefined>(undefined);
 	useOnce(() => {
 		// TODO: can the browserId actually be null?
@@ -267,13 +265,13 @@ export const App = ({ CAPI, NAV, ophanRecord }: Props) => {
 						CAPI.shouldHideReaderRevenue,
 					),
 				)
-				/* eslint-disable no-console */
+				/* eslint-disable no-console -- we want to see the console */
 				.catch((error) =>
 					console.log('Error loading readerRevenueDevUtils', error),
 				);
 		/* eslint-enable no-console */
 
-		if (window && window.guardian) {
+		if (window.guardian) {
 			window.guardian.readerRevenue = {
 				changeGeolocation: loadAndRun('changeGeolocation'),
 				showMeTheEpic: loadAndRun('showMeTheEpic'),
@@ -345,7 +343,7 @@ export const App = ({ CAPI, NAV, ophanRecord }: Props) => {
 			} else {
 				// We should never be able to directly set things to the global window object.
 				// But in this case we want to stub things for testing, so it's ok to ignore this rule
-				// @ts-ignore
+				// @ts-expect-error
 				window.ga = null;
 			}
 		});

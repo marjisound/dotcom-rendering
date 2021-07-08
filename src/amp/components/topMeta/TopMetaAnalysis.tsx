@@ -7,7 +7,7 @@ import { headline } from '@guardian/src-foundations/typography';
 import { until } from '@guardian/src-foundations/mq';
 
 import { pillarPalette_DO_NOT_USE } from '@root/src/lib/pillars';
-import { ArticleModel } from '@root/src/amp/types/ArticleModel';
+import type { ArticleModel } from '@root/src/amp/types/ArticleModel';
 import { MainMedia } from '@root/src/amp/components/MainMedia';
 import { Byline } from '@root/src/amp/components/topMeta/Byline';
 import { TopMetaExtras } from '@root/src/amp/components/topMeta/TopMetaExtras';

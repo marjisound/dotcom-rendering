@@ -27,7 +27,7 @@ const callApi = (url: string) => {
 		.then((response) => response.json());
 };
 
-const cache: { [url: string]: Promise<IdApiUserData> } = {};
+const cache: Record<string, Promise<IdApiUserData>> = {};
 
 export const getIdApiUserData = (ajaxUrl: string): Promise<IdApiUserData> => {
 	if (!(ajaxUrl in cache)) {
