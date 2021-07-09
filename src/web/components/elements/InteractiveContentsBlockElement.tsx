@@ -180,7 +180,7 @@ export const InteractiveContentsBlockElement = ({
 			const getSubheadingIndexById = (id: string): number =>
 				enhancedSubheadings.findIndex((item) => item.ref?.id === id);
 
-			const onObserve = (entries: Array<IntersectionObserverEntry>) => {
+			const onObserve = (entries: IntersectionObserverEntry[]) => {
 				// Check if we've reached the end of the document
 				const endElement = endDocumentElementId
 					? entries.find(

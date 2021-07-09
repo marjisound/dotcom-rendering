@@ -5,7 +5,7 @@ import { enhanceInteractiveContentsElements } from '@root/src/model/enhance-inte
 
 import { InteractiveContentsBlockElement } from './InteractiveContentsBlockElement';
 
-// @ts-ignore: we know that NumberedList fixture has an interactive content block
+// @ts-expect-error: we know that NumberedList fixture has an interactive content block
 const interactiveContentsBlock: InteractiveContentsBlockElement = enhanceInteractiveContentsElements(
 	NumberedList,
 ).blocks[0].elements.find(
