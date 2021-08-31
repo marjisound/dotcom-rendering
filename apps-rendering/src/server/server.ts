@@ -18,6 +18,7 @@ import {
 	Special,
 	withDefault,
 } from '@guardian/types';
+import bodyParser from 'body-parser';
 import { capiEndpoint } from 'capi';
 import compression from 'compression';
 import type {
@@ -273,8 +274,10 @@ async function serveEditionsArticlePost(
 		// The "req.body" should contain a 'Content' object which fetched by the
 		// Edition backend from the capi
 		const content = await capiContentDecoder(req.body);
+		const footballContent = await getFootballContent(content);
 		const renderingRequest: RenderingRequest = {
 			content,
+			footballContent,
 		};
 		const themeOverride = themeFromUnknown(req.query.theme);
 
@@ -344,7 +347,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const app = express();
 
-app.use(express.raw({ limit: '50mb' }));
+app.use(bodyParser.raw({ limit: '50mb' }));
 app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
 app.use('/assets', express.static(path.resolve(__dirname, '../dist/assets')));
 app.use(compression());
@@ -367,12 +370,12 @@ app.get('/healthcheck', (_req, res) => res.send('Ok'));
 app.get('/favicon.ico', (_, res) => res.status(404).end());
 app.get('/fontSize.css', (_, res) => res.status(404).end());
 
-app.get('/rendered-items/*', express.raw(), serveArticleGet);
-app.get('/*', express.raw(), serveArticleGet);
+app.get('/rendered-items/*', bodyParser.raw(), serveArticleGet);
+app.get('/*', bodyParser.raw(), serveArticleGet);
 
-app.post('/article', express.raw(), serveArticlePost);
+app.post('/article', bodyParser.raw(), serveArticlePost);
 
-app.post('/editions-article', express.raw(), serveEditionsArticlePost);
+app.post('/editions-article', bodyParser.raw(), serveEditionsArticlePost);
 
 app.listen(port, () => {
 	if (process.env.NODE_ENV === 'production') {
