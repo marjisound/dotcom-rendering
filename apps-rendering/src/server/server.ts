@@ -30,7 +30,7 @@ import express from 'express';
 import { MainMediaKind } from 'headerMedia';
 import { fromCapi } from 'item';
 import { JSDOM } from 'jsdom';
-import { pipe, resultToNullable, toArray } from 'lib';
+import { pipe, toArray } from 'lib';
 import { logger } from 'logger';
 import type { Response } from 'node-fetch';
 import fetch from 'node-fetch';
@@ -277,7 +277,7 @@ async function serveEditionsArticlePost(
 		const footballContent = await getFootballContent(content);
 		const renderingRequest: RenderingRequest = {
 			content,
-			footballContent: resultToNullable(footballContent),
+			footballContent,
 		};
 		const themeOverride = themeFromUnknown(req.query.theme);
 
@@ -313,7 +313,7 @@ async function serveArticleGet(
 					},
 					commentCount: 30,
 					relatedContent,
-					footballContent: resultToNullable(footballContent),
+					footballContent,
 				};
 
 				const richLinkDetails = req.query.richlink === '';
